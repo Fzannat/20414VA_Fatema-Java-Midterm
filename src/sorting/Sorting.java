@@ -42,12 +42,25 @@ public class Sorting {
 
     public int[] insertionSort(int[] array) {
         final long startTime = System.currentTimeMillis();
-        // IMPLEMENT HERE
+        int [] list = array;
+        //implement here
+
+        for(int j=1;j<array.length-1;j++){
+            int curr= j;
+//            int j=i;
+            while(j>0 && curr<array[j-1]){
+                array[j]=array[j-1];
+                j--;
+            }
+            array[j]=curr;
+        }
+
+
 
         final long endTime = System.currentTimeMillis();
-        this.executionTime = endTime - startTime;
-
-        return array;
+        final long executionTime = endTime - startTime;
+        this.executionTime = executionTime;
+        return list;
     }
 
     public int[] bubbleSort(int[] array) {
