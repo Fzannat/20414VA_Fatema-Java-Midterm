@@ -21,6 +21,20 @@ public class DetermineLargestWord {
         Map<Integer, String> map = new HashMap<Integer, String>();
         String st = "";
 
+        String[] wordsArray = wordGiven.split(" ");
+
+
+        int maxLength = 0;
+        for(int i = 0; i <wordsArray.length; i++){
+
+            if (wordsArray[i].length() > maxLength){
+                maxLength = wordsArray[i].length();
+                st = wordsArray[i];
+            }
+        }
+
+        map.put(maxLength, st);
+
 
 
 
