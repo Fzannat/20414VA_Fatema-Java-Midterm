@@ -12,7 +12,10 @@ public class CompanyEmployee {
      *  Try to think like a Software Developer
      */
     public static void main(String[] args) {
-
+    EmployeeInfo employee = new EmployeeInfo("Fariha", 12345, "QA tester","ff77@gmail.com", "IT", 80000 );
+        System.out.println("Fariha earned:"+employee.calculateAnnualBonus(80000, 4));
+    //employee.calculateEmployeePension(80000);
+        System.out.println("pension of the employee:"+ employee.calculateEmployeePension(80000));
     }
 
 }
