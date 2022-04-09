@@ -19,19 +19,29 @@ public class Factorial {
         //Stored the entered value in variable
         int num = scanner.nextInt();
         //Called the user defined function fact
-        int factorial = fact(num);
-        System.out.println("Factorial of entered number is: "+factorial);
+        int recursionFactorial = recursion(num);
+        int iterationFactorial = iteration(num);
+        System.out.println("Factorial using recursion method of entered number is: "+ recursionFactorial);
+        System.out.println("Factorial using iteration method of entered number is: "+ iterationFactorial);
     }
-    static int fact(int n)
-    {
+    static int recursion(int n) {
         int output;
         if(n==1){
             return 1;
         }
         //Recursion: Function calling itself!!
-        output = fact(n-1)* n;
+        output = recursion(n-1)* n;
         return output;
     }
+    static int iteration(int n)
+    {
+        int outPut = 1, i;
+        for (i = 2; i <= n; i++)
+            outPut *= i;
+        return outPut;
+    }
+
+
 }
 
 

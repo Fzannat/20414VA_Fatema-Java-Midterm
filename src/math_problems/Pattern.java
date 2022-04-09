@@ -11,8 +11,24 @@ public class Pattern {
      */
 
     public static void main(String[] args) {
-        for (int i=100; i>=1; i--){
-            System.out.print(i +", ");
+         getPattern();
+    }
+        static void getPattern(){
+        int num = 100;
+        int count = 1;
+        int secondCount = 1;
+        while (num >= 0) {
+
+            System.out.print(num + " ");
+
+            num -= secondCount;
+            count++;
+            if (count == 11) {
+                count = 1;
+                secondCount++;
+            }
+
         }
     }
+
 }
