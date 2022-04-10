@@ -45,24 +45,23 @@ public class Sorting {
         int [] list = array;
         //implement here
 
-        for(int j=1;j<array.length-1;j++){
-            int curr= j;
-//            int j=i;
-            while(j>0 && curr<array[j-1]){
-                array[j]=array[j-1];
-                j--;
+        int n = array.length;
+        for (int i = 1; i < n; ++i) {
+            int key = array[i];
+            int j = i - 1;
+
+            while (j >= 0 && array[j] > key) {
+                array[j + 1] = array[j];
+                j = j - 1;
             }
-            array[j]=curr;
+            array[j + 1] = key;
         }
 
-
-
         final long endTime = System.currentTimeMillis();
-        final long executionTime = endTime - startTime;
-        this.executionTime = executionTime;
-        return list;
-    }
+        this.executionTime = endTime - startTime;
 
+        return array;
+    }
     public int[] bubbleSort(int[] array) {
         // IMPLEMENT HERE
 
@@ -76,7 +75,22 @@ public class Sorting {
     }
 
     public int[] quickSort(int[] array) {
-        // IMPLEMENT HERE
+        final long startTime = System.currentTimeMillis();
+
+        for (int i = 0; i < array.length - 1; i++) {
+            int min = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < array[min])
+                    min = j;
+            }
+
+            int temp = array[min];
+            array[min] = array[i];
+            array[i] = temp;
+        }
+
+        final long endTime = System.currentTimeMillis();
+        this.executionTime = endTime - startTime;
 
         return array;
     }
@@ -95,6 +109,27 @@ public class Sorting {
 
     public int[] shellSort(int[] array) {
         //implement here
+        final long startTime = System.currentTimeMillis();
+
+        int n = array.length;
+        for (int i = 0; i < n; ++i) {
+            n = array.length;
+
+            for (int gap = n/2; gap > 0; gap /= 2) {
+                for (i = gap; i < n; i += 1) {
+                    int temp = array[i];
+                    int j;
+                    for (j = i; j >= gap && array[j - gap] > temp; j -= gap)
+                        array[j] = array[j - gap];
+
+                    array[j] = temp;
+                }
+            }
+
+        }
+
+        final long endTime = System.currentTimeMillis();
+        this.executionTime = endTime - startTime;
 
         return array;
     }
