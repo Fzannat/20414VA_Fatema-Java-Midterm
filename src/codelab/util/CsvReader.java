@@ -52,26 +52,7 @@ public class CsvReader {
 
         System.out.println("Average class score: " + (sum / arrayList.size()));
 
-        /** TESTING
-         try {
-         br = new BufferedReader(new FileReader(csvFilePath));
-         int lineNumber = 0;
-         ArrayList<String> total = new ArrayList<>();
-         int avg = 0;
-         while((line =br.readLine()) != null) {
-         if(lineNumber == 0) {
-         lineNumber++;
-         continue;
-         }
-         String[] values = line.split(csvSplitBy);
-         total.add(values[13]);
-         System.out.println(total);
-         System.out.println(values[13]); // gets all the scores
-         }
-         } catch (IOException e) {
-         e.printStackTrace();
-         }
-         */
+
 
         /** SAMI's EXAMPLE CODE
          try {
